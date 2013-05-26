@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Málo.css</title>
+	<link rel="stylesheet" type="text/css" href="maalo.css" />
+</head>
+<body>
+
+<h1>Málo.css</h1>
+
+<p>an minimalistic CSS framework. <strong>Málo</strong> means <strong>few</strong> in Czech language.</p>
+
+<h2>Credits</h2>
+
+<p>Copied, pasted and edited by Mikoláš Štrajt. Heavily based on work of <a href="http://www.vcarrer.com/">Vladimir Carrer</a>. Licensed under MIT license.</p>
+
+<p>Mixed from following libraries:</p>
+
+<ul>
+    <li><a href="http://code.google.com/p/malo/">Malo</a> - grid philosophy and code.</li>
+    <li><a href="http://code.google.com/p/better-web-readability-project/">Better Web Readability Project</a> - styles for comfortable readability. Maybe it tampere some typographic rules, but it's good for reading from screen.</li>
+</ul>
+
+<h2>Grid</h2>
+
+<p>Grid is realy simple - it consist of classes <code>dp100</code>, <code>dp50</code>, <code>dp33</code>, <code>dp25</code> and <code>dp20</code> which serves as columns and class <code>clearfix</code> which serves as row. <code>dp</code> means div percent.</p>
+
+<h2>Typography</h2>
+
+<p>All the typography comes from <abbr title="Better Web Readability Project">BWRP</abbr>, you can find more information about it in interesting article <a href="http://www.vcarrer.com/2009/05/how-we-read-on-web-and-how-can-we.html">How we read on web and how can we improve that</a>.</p>
+
+<p>There are only minor changes from me (thunderbird-style blockquotes, DOS prompt-like code).</p>
+
+<h2>Natural box model</h2>
+
+<p>Standard box model as defined by <abbr title="World Wide Web Consorcium">W3C</abbr> is little bit confusing. You set up dimensions of and element and later add some border and padding and... volià - your design is broken.</p>
+
+<p>This is because css property width (or height) is defined <em>not including</em> padding and border. Fortunately, there is a possibility to switch to natural box model, which includes border and padding to width (or height) as naive web developer (including mine) would except.</p>
+
+<p>So for column classes (<code>dp100</code>, <code>dp50</code>, <code>dp33</code>, <code>dp25</code> and <code>dp20</code>) I use box natural box model rather than standard. There is also helper class <code>natural</code> which brings natural box model to other elements. This was not included in original malo.css library.</p>
+
+<h3>Live example</h3>
+
+<p><style>
+.example { border: 10px dotted red; padding: 20px; width: 200px; }
+.box-model-natural {</p>
+<pre><code>-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;         /* Opera/IE 8+ */
+</code></pre>
+<p>}
+.box-model-standard {</p>
+<pre><code>/* this is default behaviour */
+-webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: content-box;    /* Firefox, other Gecko */
+box-sizing: content-box;         /* Opera/IE 8+ */
+</code></pre>
+
+<p>}
+</style></p>
+
+
+<div class="example box-model-natural">natural box model</div>
+
+
+<div class="clearfix"><img src="200px.png"></div>
+
+
+<div class="example box-model-standard">standard box model</div>
+
+
+<p>Both red-framed boxes has <code>border-width : 10px</code>, <code>padding : 10px</code> and <code>width : 200px</code>.</p>
+
+<hr/>
+
+<p>You can found more information about it on <a href="http://www.paulirish.com/2012/box-sizing-border-box-ftw/">Paul Irish blog</a>.</p>
+
+<h2>More usage info</h2>
+
+<ul>
+    <li><a href="catalog.html">element catalog</a></li>
+    <li><a href="reference.html">class reference</a></li>
+</ul>
+
+<h2>Real world like examples</h2>
+
+<p>This are examples of pages restyled with this framework.</p>
+
+<ul>
+    <li><a href="syntax.html">markdown syntax page</a></li>
+    <li><a href="lua-manual-52.html">Lua 5.2 Reference Manual</a></li>
+</ul>
+
+
+</body></html>
