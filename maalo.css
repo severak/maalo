@@ -154,13 +154,13 @@ hr { margin-bottom:1.625em; border: 1px dashed #333;}
 .mono { font-family:"Courier New", Courier, monospace; }
 
 /* inverted color scheme */
-.inverted > h1,
-.inverted > h2,
-.inverted > h3,
-.inverted > h4,
-.inverted > h5,
-.inverted > h6
-{ color: #FFFEF0; background-color: #333; }
+.inverted h1,
+.inverted h2,
+.inverted h3,
+.inverted h4,
+.inverted h5,
+.inverted h6
+{ color: #FFFEF0; }
 
 .inverted { color:#FFFEF0;  background-color:#111;}
 
